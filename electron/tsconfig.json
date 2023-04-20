@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "lib": ["es5", "es2015.promise", "dom", "es2015"],
+    "target": "ES5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "strict": true,
+    "outDir": "../build",
+    "rootDir": "../",
+    "noEmitOnError": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  }
+}
