@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import { DataSource } from 'typeorm';
 import getAppDataPath from 'appdata-path';
 import { Game } from './models/Game';
+import path = require('path');
 
 class Database {
   static instance: Database | null = null;
@@ -10,7 +11,7 @@ class Database {
   constructor() {
     this.db = new DataSource({
       type: 'sqlite',
-      database: getAppDataPath('game-library') + '/db.sqlite3',
+      database: process.env.NODE_ENV === 'development' ? path.normalize('../../db.sqlite3') : getAppDataPath('game-library') + '/db.sqlite3',
       entities: [Game],
       synchronize: true,
       logging: true,
